@@ -8,7 +8,17 @@ class App extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>My first React app</h1>
         <h2 className={styles.subtitle}>Hello World!</h2>
-        <List /> {/* tu będzie wyświetlona zawartość komponentu List */}
+        <List
+        title={['Things to do ', <sup key='1'>soon!</sup>]}
+        /* title - jest propsem przekazywanym 
+        do komponentu klasowego List */
+
+        image='https://i.postimg.cc/qMCHTFBM/pexels-pierre-blach-3109420.jpg'>
+
+        <p>I'm planning on doing all these things sooner, rather than later!</p>
+        {/* zawartość znajdująca się między tagami komponentu (np. List), 
+        jest przekazywana jako props ze szczególną właściwością children) */}
+        </List> {/* tu będzie wyświetlona zawartość komponentu List */}
       </main>
     )
   }
