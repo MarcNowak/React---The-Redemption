@@ -39,6 +39,7 @@ class List extends React.Component {
     description: settings.defaultListDescription,
   }
 
+  /* addColumn zmienia stan komponentu za pomocą metody setState*/
   addColumn(title) {
     this.setState(state => (
       {
