@@ -12,7 +12,7 @@ class List extends React.Component {
 
   state = {
     columns: this.props.columns || [],
-  }
+  };
 
   static propTypes = {
     /* static, które oznacza, że będziemy definiować statyczną właściwość tej klasy. 
@@ -31,13 +31,13 @@ class List extends React.Component {
     /* Dla każdej nazwy właściwości podajemy jej typ, 
     wykorzystując typy zapisane w zaimportowanym obiekcie PropTypes */
 
-  }
+  };
 
   static defaultProps = {
     /* kiedy nie zostanie podana żadna zawartość opisu listy, wstawiamy domyślny opis */
     // children: <p>I can do all the things!!!</p>,
     description: settings.defaultListDescription,
-  }
+  };
 
   /* addColumn zmienia stan komponentu za pomocą metody setState*/
   addColumn(title) {
@@ -46,12 +46,12 @@ class List extends React.Component {
         columns: [
           ...state.columns,
           {
-            key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+            key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
             title,
             icon: 'list-alt',
-            cards: []
-          }
-        ]
+            cards: [],
+          },
+        ],
       }
     ));
   }
@@ -87,12 +87,12 @@ class List extends React.Component {
         <div className={styles.creator}>
           <Creator
             text={settings.columnCreatorText} action={title => this.addColumn(title)} />
-            {/* właściwość / props 'text' to treść placeholdera w polu tekstowym, która wyjaśnia do czego służy dany komponent,
+          {/* właściwość / props 'text' to treść placeholdera w polu tekstowym, która wyjaśnia do czego służy dany komponent,
             właściwość / props 'action' zawiera funkcję, która będzie wykonana w momencie kliknięcia guzika "OK" 
             (widocznego po wpisaniu jakiegoś tekstu w pole tekstowe). */}
         </div>
       </section>
-    )
+    );
   }
 }
 

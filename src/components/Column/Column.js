@@ -11,7 +11,7 @@ class Column extends React.Component {
 
   state = {
     cards: this.props.cards || [],
-  }
+  };
 
   static propTypes = {
     title: PropTypes.node.isRequired,
@@ -19,7 +19,7 @@ class Column extends React.Component {
 
     cards: PropTypes.array,
     icon: PropTypes.node,
-  }
+  };
 
   /* addCard zmienia stan komponentu za pomocą metody this.setState*/
   addCard(title) {
@@ -28,10 +28,10 @@ class Column extends React.Component {
         cards: [
           ...state.cards,
           {
-            key: state.cards.length ? state.cards[state.cards.length-1].key+1 : 0,
+            key: state.cards.length ? state.cards[state.cards.length - 1].key + 1 : 0,
             title,
-          }
-        ]
+          },
+        ],
       }
     ));
   }
@@ -41,8 +41,8 @@ class Column extends React.Component {
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>
-          <span className={styles.icon}><Icon name={this.props.icon}/></span>{this.props.title}</h3>
-          {/* name - właściwość / props przekazywana do komponentu Icon */}
+          <span className={styles.icon}><Icon name={this.props.icon} /></span>{this.props.title}</h3>
+        {/* name - właściwość / props przekazywana do komponentu Icon */}
         <div className={styles.cards}>
           {this.state.cards.map(({ key, ...cardProps }) => (
             <Card key={key} {...cardProps} />
@@ -53,7 +53,7 @@ class Column extends React.Component {
             text={settings.cardCreatorText} action={title => this.addCard(title)} />
         </div>
       </section>
-    )
+    );
   }
 }
 

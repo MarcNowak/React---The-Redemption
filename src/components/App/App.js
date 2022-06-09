@@ -3,7 +3,7 @@ import styles from './App.scss';
 import List from '../List/List';
 import {
   pageContents,
-  listData
+  listData,
 } from '../../data/dataStore';
 
 class App extends React.Component {
@@ -29,7 +29,7 @@ class App extends React.Component {
           jest przekazywana jako props ze szczególną właściwością children) */}
 
       </main>
-    )
+    );
   }
 }
 
