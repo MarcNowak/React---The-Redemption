@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 // import Creator from '../Creator/Creator';
-// import Card from '../Card/Card';
+import Card from '../Card/Card';
 import Icon from './Icon';
 
 // import { settings } from '../../data/dataStore';
@@ -38,6 +38,7 @@ class Column extends React.Component {
 
   render() {
     // const { title, icon } = this.props;
+    const { cards } = this.props;
 
     return (
       <section className={styles.component}>
@@ -45,12 +46,15 @@ class Column extends React.Component {
           <span className={styles.icon}><Icon name={this.props.icon} /></span>{this.props.title}
         </h3>
         {/* name - właściwość / props przekazywana do komponentu Icon */}
-        {/* <div className={styles.cards}>
-          {this.state.cards.map(({ key, ...cardProps }) => (
+        <div className={styles.cards}>
+          {/* {this.state.cards.map(({ key, ...cardProps }) => (
             <Card key={key} {...cardProps} />
+          ))} */}
+          {cards.map(cardData => (
+            <Card key={cardData.id} {...cardData} />
           ))}
         </div>
-        <div className={styles.creator}>
+        {/* <div className={styles.creator}>
           <Creator
             text={settings.cardCreatorText} action={title => this.addCard(title)} />
         </div> */}
