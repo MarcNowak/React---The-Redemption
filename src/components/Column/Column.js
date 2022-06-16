@@ -1,24 +1,30 @@
 import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
-// import Creator from '../Creator/Creator';
+import Creator from '../Creator/Creator';
 import Card from '../Card/Card';
 import Icon from './Icon';
+import { settings } from '../../data/dataStore';
 
 // import { settings } from '../../data/dataStore';
 
 class Column extends React.Component {
 
-  state = {
-    cards: this.props.cards || [],
-  };
+  // state = {
+  //   cards: this.props.cards || [],
+  // };
 
   static propTypes = {
     title: PropTypes.node.isRequired,
-    /* właściwosć / props zdefiniowana w komponencie List*/
+    /* właściwość / props zdefiniowana w komponencie List*/
 
     cards: PropTypes.array,
     icon: PropTypes.node,
+    addCard: PropTypes.func,
+  };
+
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
   };
 
   /* addCard zmienia stan komponentu za pomocą metody this.setState*/
@@ -37,13 +43,12 @@ class Column extends React.Component {
   // }
 
   render() {
-    // const { title, icon } = this.props;
-    const { cards } = this.props;
+    const { title, icon, cards, addCard } = this.props;
 
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>
-          <span className={styles.icon}><Icon name={this.props.icon} /></span>{this.props.title}
+          <span className={styles.icon}><Icon name={icon} /></span>{title}
         </h3>
         {/* name - właściwość / props przekazywana do komponentu Icon */}
         <div className={styles.cards}>
@@ -54,10 +59,10 @@ class Column extends React.Component {
             <Card key={cardData.id} {...cardData} />
           ))}
         </div>
-        {/* <div className={styles.creator}>
+        <div className={styles.creator}>
           <Creator
-            text={settings.cardCreatorText} action={title => this.addCard(title)} />
-        </div> */}
+            text={settings.cardCreatorText} action={addCard} />
+        </div>
       </section>
     );
   }

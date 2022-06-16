@@ -4,7 +4,7 @@ import Hero from '../Hero/Hero';
 import Column from '../Column/ColumnContainer';
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
-// import Creator from '../Creator/Creator';
+import Creator from '../Creator/Creator';
 
 import { settings } from '../../data/dataStore';
 
@@ -28,6 +28,7 @@ class List extends React.Component {
     image: PropTypes.string.isRequired,
     description: PropTypes.node,
     columns: PropTypes.array,
+    addColumn: PropTypes.func,
     /* Dla każdej nazwy właściwości podajemy jej typ, 
     wykorzystując typy zapisane w zaimportowanym obiekcie PropTypes */
 
@@ -57,7 +58,7 @@ class List extends React.Component {
     } */
 
   render() {
-    const { title, image, description, columns } = this.props;
+    const { title, image, description, columns, addColumn } = this.props;
     return (
       <section className={styles.component}>
         <Hero
@@ -83,10 +84,10 @@ class List extends React.Component {
             <Column key={columnData.id} {...columnData} />
           ))}
         </div>
-        {/* <div className={styles.creator}>
+        <div className={styles.creator}>
           <Creator
-            text={settings.columnCreatorText} action={title => this.addColumn(title)} />
-        </div> */}
+            text={settings.columnCreatorText} action={addColumn} />
+        </div>
        
       </section>
     );
