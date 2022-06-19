@@ -16,7 +16,7 @@ export const settings = {
 
 export const pageContents = {
   title: 'My first React app',
-  subtitle: 'A simple to-do app, with lists, columns and cards',
+  subtitle: 'Short "must visit" list',
 };
 
 export const listData = {
@@ -27,7 +27,7 @@ export const listData = {
     {
       key: 0,
       title: 'Books',
-      icon: 'book',
+      icon: '',
       cards: [
         {
           key: 0,
@@ -75,8 +75,8 @@ export const listData = {
 const lists = [
   {
     id: 'list-1',
-    title: 'Things to do <sup>soon!</sup>',
-    description: 'Interesting things I want to check out!',
+    title: 'Places to visit <sup>soon!</sup>',
+    description: 'Interesting places I want to visit!',
     image: 'https://i.postimg.cc/qMCHTFBM/pexels-pierre-blach-3109420.jpg',
   },
 ];
@@ -85,20 +85,20 @@ const columns = [
   {
     id: 'column-1',
     listId: 'list-1',
-    title: 'Books',
-    icon: 'book',
+    title: 'France',
+    icon: 'wine-bottle',
   },
   {
     id: 'column-2',
     listId: 'list-1',
-    title: 'Movies',
-    icon: 'film',
+    title: 'USA',
+    icon: 'flag-usa',
   },
   {
     id: 'column-3',
     listId: 'list-1',
-    title: 'Games',
-    icon: 'gamepad',
+    title: 'Corse',
+    icon: 'anchor',
   },
   {
     id: 'column-4',
@@ -112,32 +112,42 @@ const cards = [
   {
     id: 'card-1',
     columnId: 'column-1',
-    title: 'This Is Going to Hurt',
+    title: 'Fort de Brégançon',
   },
   {
     id: 'card-2',
     columnId: 'column-1',
-    title: 'Interpreter of Maladies',
+    title: 'Bormes-les-Mimosas',
+  },
+  {
+    id: 'card-7',
+    columnId: 'column-1',
+    title: 'Notre-Dame de Constance - Chapelle',
   },
   {
     id: 'card-3',
-    columnId: 'column-2',
-    title: 'Harry Potter',
+    columnId: 'column-1',
+    title: 'Le Lavandou',
   },
   {
     id: 'card-4',
     columnId: 'column-2',
-    title: 'Star Wars',
+    title: 'Buddy Valastro Foods',
   },
   {
     id: 'card-5',
     columnId: 'column-3',
-    title: 'The Witcher',
+    title: 'Parc naturel régional de Corse',
   },
   {
     id: 'card-6',
     columnId: 'column-3',
-    title: 'Skyrim',
+    title: 'Ajaccio',
+  },
+  {
+    id: 'card-8',
+    columnId: 'column-3',
+    title: 'Plage du Grand Sperone',
   },
 ];
 
