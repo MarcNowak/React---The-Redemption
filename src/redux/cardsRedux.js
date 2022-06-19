@@ -1,7 +1,7 @@
 import shortid from 'shortid';
 
 // selectors
-export const getCardsForColumn = ({ cards }, columnId) => cards.filter(card => card.columnId == columnId);
+export const getCardsForColumn = ({ cards, searchString }, columnId) => cards.filter(card => card.columnId == columnId && new RegExp(searchString, 'i').test(card.title));
 // wybieramy karty z danej kolumny
 
 // action name creator
@@ -47,10 +47,10 @@ export default function reducer(statePart = [], action = []) {
 
       return [...statePart, action.payload];
       /* zwróci nową tablicę, w której znajdzie się 
-      rozpakowany dotychczasowy stan, oraz dodany nowy obiekt */
+    rozpakowany dotychczasowy stan, oraz dodany nowy obiekt */
 
       /* w tym obiekcie rozpakowany zostanie payload akcji
-      oraz stworzone zostanie id karty */
+    oraz stworzone zostanie id karty */
 
     default:
       /* wykona się blok kodu rozpoczynający się od default,
