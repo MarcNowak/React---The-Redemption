@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import App from './App';
-// importujemy komponent, dla którego jest kontenerem – w tym wypadku App
+import Home from './Home';
+// importujemy komponent, dla którego jest kontenerem – w tym wypadku Home
 
 const mapStateToProps = state => ({
   /* w stałej mapStateToProps zapisujemy funkcję, 
@@ -10,6 +10,6 @@ const mapStateToProps = state => ({
   lists: state.lists,
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Home);
 /* w ostatniej parze nawiasów musimy podać komponent,
 który jest wykorzystywany w tym kontenerze */
