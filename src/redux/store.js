@@ -7,6 +7,7 @@ import searchReducer from './searchStringRedux';
 
 
 // define initial state and shallow-merge initial data
+// deklarujemy początkowy stan aplikacji
 const initialState = {
   app: initialStoreData.app,
   lists: initialStoreData.lists,
@@ -17,6 +18,7 @@ const initialState = {
 };
 
 // define reducers
+// zawiera listę reducerów zajmujących się poszczególnymi fragmentami stanu aplikacji
 const reducers = {
   columns: columnsReducer,
   /* dodajemy funkcję reducer do obiektu reducers pod kluczem columns */
@@ -34,6 +36,8 @@ Object.keys(initialState).forEach(item => {
 
 // merge all reducers
 const storeReducer = combineReducers(reducers);
+/* cząstkowe reducery są łączone w jeden za pomocą funkcji combineReducers,
+zaimportowanej z pakietu redux */
 
 // create store
 const store = createStore(
