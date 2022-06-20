@@ -5,6 +5,7 @@ import Column from '../Column/ColumnContainer';
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator';
+import Container from '../Container/Container';
 
 import { settings } from '../../data/dataStore';
 
@@ -60,36 +61,37 @@ class List extends React.Component {
   render() {
     const { title, image, description, columns, addColumn } = this.props;
     return (
-      <section className={styles.component}>
-        <Hero
-          titleText={title}
-          /* titletext - to właściwość / props  
-          przekazywana do komponentu funkcyjnego Hero */
+      <Container>
+        <section className={styles.component}>
+          <Hero
+            titleText={title}
+            /* titletext - to właściwość / props  
+            przekazywana do komponentu funkcyjnego Hero */
 
-          titleImage={image}
-        /> {/* tu będzie wyświetlana zawartość komponentu Hero */}
+            titleImage={image}
+          /> {/* tu będzie wyświetlana zawartość komponentu Hero */}
 
-        <div className={styles.description}>
-          {/* {this.props.children} */}
-          {ReactHtmlParser(description)}
-          {/* zawartość znajdująca się między tagami komponentu (np. List), 
+          <div className={styles.description}>
+            {/* {this.props.children} */}
+            {ReactHtmlParser(description)}
+            {/* zawartość znajdująca się między tagami komponentu (np. List), 
           jest przekazywana jako props ze szczególną właściwością children) */}
-        </div>
-        
-        <div className={styles.columns}>
-          {/* {this.state.columns.map(({ key, ...columnProps }) => (
+          </div>
+
+          <div className={styles.columns}>
+            {/* {this.state.columns.map(({ key, ...columnProps }) => (
             <Column key={key} {...columnProps} />
           ))} */}
-          {columns.map(columnData => (
-            <Column key={columnData.id} {...columnData} />
-          ))}
-        </div>
-        <div className={styles.creator}>
-          <Creator
-            text={settings.columnCreatorText} action={addColumn} />
-        </div>
-       
-      </section>
+            {columns.map(columnData => (
+              <Column key={columnData.id} {...columnData} />
+            ))}
+          </div>
+          <div className={styles.creator}>
+            <Creator
+              text={settings.columnCreatorText} action={addColumn} />
+          </div>
+        </section>
+      </Container>
     );
   }
 }
