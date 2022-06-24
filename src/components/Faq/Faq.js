@@ -2,16 +2,16 @@ import React from 'react';
 import Container from '../Container/Container';
 import Hero from '../Hero/Hero';
 import {
-  infoSubPage, 
+  faqSubPage, 
   listData, 
 } from '../../data/dataStore';
 
-const Info = () => (
+const Faq = () => (
   <Container>
     <Hero image={listData.image}/>
-    <h2>{infoSubPage.infoNavText}</h2>
-    <p>{infoSubPage.infoContent}</p>
+    <h2>{faqSubPage.faqNavText}</h2>
+    <p>{faqSubPage.faqContent}</p>
   </Container>
 );
 
-export default Info;
+export default Faq;
