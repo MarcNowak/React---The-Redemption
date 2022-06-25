@@ -98,6 +98,42 @@ const lists = [
     description: 'Interesting places I want to visit!',
     image: 'https://i.postimg.cc/qMCHTFBM/pexels-pierre-blach-3109420.jpg',
   },
+  {
+    id: 'list-2',
+    title: 'Places to visit <sup>later!</sup>',
+    description: 'Interesting places I want to visit!',
+    image: 'https://i.postimg.cc/y84GjgZW/IMG-7103.jpg',
+  },
+  {
+    id: 'list-3',
+    title: 'Places to visit <sup>never!</sup>',
+    description: 'Interesting places I want to visit!',
+    image: 'https://i.postimg.cc/cLLFXRJx/IMG-6986-3.jpg',
+  },
+  {
+    id: 'list-4',
+    title: 'Things to do',
+    description: 'Interesting places I want to visit!',
+    image: 'https://i.postimg.cc/90BBB05w/IMG-20220402-075108.jpg',
+  },
+  {
+    id: 'list-5',
+    title: 'Things to do not</sup>',
+    description: 'Interesting places I want to visit!',
+    image: 'https://i.postimg.cc/PJqCB5vw/IMG-20210707-142108.jpg',
+  },
+  {
+    id: 'list-6',
+    title: 'To see',
+    description: 'Interesting places I want to visit!',
+    image: 'https://i.postimg.cc/qMztwgTf/IMG-20210705-201457.jpg',
+  },
+  {
+    id: 'list-7',
+    title: 'To eat</sup>',
+    description: 'Interesting places I want to visit!',
+    image: 'https://i.postimg.cc/qRq0rhQ4/IMG-20210705-160351.jpg',
+  },
 ];
 
 const columns = [

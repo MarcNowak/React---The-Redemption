@@ -7,12 +7,22 @@ import { createActionAddColumn } from '../../redux/columnsRedux';
 
 // export const getColumnsForList = ({ columns }, listId) => columns.filter(column => column.listId == listId);
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state, props) => {
   /* w stałej mapStateToProps zapisujemy funkcję, 
   która definiuje powiązanie propsów ze stanem */
 
-  columns: getColumnsForList(state, props.id),
-});
+  const id = props.match.params.id;
+  const filteredLists = state.lists.filter(list => list.id == id);
+  // filtrujemy stan aplikacji
+
+  const listParams = filteredLists[0] || {};
+  // obiekt zawierający właściwości listy
+
+  return {
+    ...listParams,
+    columns: getColumnsForList(state, id),
+  };
+};
 
 const mapDispatchToProps = (dispatch, props) => ({
   /* dodaje propsy komponentu – jednak ich wartościami nie są dane ze stanu,
@@ -24,12 +34,12 @@ const mapDispatchToProps = (dispatch, props) => ({
   w których znajdą się funkcje wysyłające akcje do magazynu. 
   Pamiętaj, że akcja jest zgłoszeniem chęci zmiany stanu aplikacji.  */
 
-  addColumn: title => dispatch(createActionAddColumn ({
+  addColumn: title => dispatch(createActionAddColumn({
     /* props addColumn będzie zawierał funkcję, przyjmującą jeden argument – title */
     /* Na podstawie tego argumentu zostanie wykonana funkcja dispatch 
     (która jest argumentem funkcji mapDispatchToProps), wysyłająca akcję do magazynu. */
 
-    listId: props.id,
+    listId: props.match.params.id,
     title,
   })),
 });
