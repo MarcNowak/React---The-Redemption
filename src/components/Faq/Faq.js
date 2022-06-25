@@ -8,7 +8,7 @@ import {
 
 const Faq = () => (
   <Container>
-    <Hero image={listData.image}/>
+    <Hero titleImage={listData.image}/>
     <h2>{faqSubPage.faqNavText}</h2>
     <p>{faqSubPage.faqContent}</p>
   </Container>

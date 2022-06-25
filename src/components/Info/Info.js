@@ -8,7 +8,7 @@ import {
 
 const Info = () => (
   <Container>
-    <Hero image={listData.image}/>
+    <Hero titleImage={listData.image}/>
     <h2>{infoSubPage.infoNavText}</h2>
     <p>{infoSubPage.infoContent}</p>
   </Container>
